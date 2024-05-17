@@ -111,30 +111,56 @@ if (login === "Admin") {
 // console.log( )
 
 
-/**
- *? Напишіть ф-цію calcTotalPrice(someStones, stoneName),
- *? яка приймає масив об'єктів та
- *? рядок із назвою каменю.
- *? Функція рахує та повертає загальну вартість каменів
- *? з таким ім'ям, ціною та кількістю з об'єкта
- */
-const stones = [
-  { name: "Изумруд", price: 1300, quantity: 4 },
-  { name: "Бриллиант", price: 2700, quantity: 6 },
-  { name: "Сапфир", price: 400, quantity: 7 },
-  { name: "Щебень", price: 150, quantity: 100 },
+// /**
+//  *? Напишіть ф-цію calcTotalPrice(someStones, stoneName),
+//  *? яка приймає масив об'єктів та
+//  *? рядок із назвою каменю.
+//  *? Функція рахує та повертає загальну вартість каменів
+//  *? з таким ім'ям, ціною та кількістю з об'єкта
+//  */
+// const stones = [
+//   { name: "Изумруд", price: 1300, quantity: 4 },
+//   { name: "Бриллиант", price: 2700, quantity: 6 },
+//   { name: "Сапфир", price: 400, quantity: 7 },
+//   { name: "Щебень", price: 150, quantity: 100 },
+// ];
+
+
+// function calcTotalPrice(someStones, stoneName) { 
+
+//   for (let stone of someStones) { 
+//     // console.log(stone);
+//     if (stone.name === stoneName) { 
+//       return stone.price * stone.quantity;
+//     }
+//   }
+//   return "Not Found yours Stone"
+// }
+
+// console.log(calcTotalPrice(stones, ""));
+
+
+
+///**
+// *? Напишіть функцію, яка приймає массив об'єктів і повертає новий массив
+// *? Зробіть знижку 20 % на всі фрукти у масиві
+// *? Надайте ід для кожного продукту
+// */
+const fruits = [
+  { name: "apple", price: 200 },
+  { name: "orange", price: 300 },
+  { name: "grapes", price: 750 },
 ];
 
-
-function calcTotalPrice(someStones, stoneName) { 
-
-  for (let stone of someStones) { 
-    // console.log(stone);
-    if (stone.name === stoneName) { 
-      return stone.price * stone.quantity;
+function updateArray(arr) {
+    let newArr = [];
+    let id = 0;
+    for (const el of arr) {
+        let newel = { ...el, price: el.price * 0.8, id: id};
+        id += 1;
+        newArr.push(newel);
     }
-  }
-  return "Not Found yours Stone"
-}
-
-console.log(calcTotalPrice(stones, ""));
+    return newArr;
+} 
+console.log(updateArray(fruits));
+console.log(fruits);
