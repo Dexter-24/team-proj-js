@@ -171,17 +171,48 @@ if (login === "Admin") {
 // розвертає цей массив
 // і повертає рядок js is the best
 // вхідний массив не має змінюватись (мутується)
-const arr = ["best", "the", "foo", "is", "js"];
-const copyArr = [...arr]
-const index = copyArr.indexOf("foo");
-copyArr.splice(index, 1);
-copyArr.reverse();
-const string = copyArr.join(" ")
-console.log(string);
-console.log(arr);
+// const arr = ["best", "the", "foo", "is", "js"];
+// const copyArr = [...arr]
+// const index = copyArr.indexOf("foo");
+// copyArr.splice(index, 1);
+// copyArr.reverse();
+// const string = copyArr.join(" ")
+// console.log(string);
+// console.log(arr);
 
-const string = arr
-  .slice(0, arr.indexOf("foo"))
-  .concat(arr.slice(arr.indexOf("foo") + 1, arr.length))
-  .reverse()
-  .join(" ");
+// const string = arr
+//   .slice(0, arr.indexOf("foo"))
+//   .concat(arr.slice(arr.indexOf("foo") + 1, arr.length))
+//   .reverse()
+//   .join(" ");
+
+
+  /* Напишіть функцію, яка приймає об'єкт і рахує загальну суму зарплат працівників. */
+const someObj = {
+  worker1: 360,
+  worker2: 750,
+  worker3: 240,
+};
+
+// function sumSallary(object) { 
+//   let sum = 0;
+//   for (let value in object) { 
+//     sum += object[value]
+//     // console.log(object[value]);
+//   }
+//   return sum 
+// }
+
+console.log(sumSallary(someObj));
+
+
+function sumSallary(object) { 
+  let sum = 0;
+  let sallary = Object.values(object)
+  for (let value of sallary) {
+    sum += value
+  }
+  return sum; 
+}
+
+console.log(sumSallary(someObj));
