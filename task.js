@@ -126,11 +126,11 @@ if (login === "Admin") {
 // ];
 
 
-// function calcTotalPrice(someStones, stoneName) { 
+// function calcTotalPrice(someStones, stoneName) {
 
-//   for (let stone of someStones) { 
+//   for (let stone of someStones) {
 //     // console.log(stone);
-//     if (stone.name === stoneName) { 
+//     if (stone.name === stoneName) {
 //       return stone.price * stone.quantity;
 //     }
 //   }
@@ -140,27 +140,48 @@ if (login === "Admin") {
 // console.log(calcTotalPrice(stones, ""));
 
 
-
+/*
 ///**
 // *? Напишіть функцію, яка приймає массив об'єктів і повертає новий массив
 // *? Зробіть знижку 20 % на всі фрукти у масиві
 // *? Надайте ід для кожного продукту
 // */
-const fruits = [
-  { name: "apple", price: 200 },
-  { name: "orange", price: 300 },
-  { name: "grapes", price: 750 },
-];
+// const fruits = [
+//   { name: "apple", price: 200 },
+//   { name: "orange", price: 300 },
+//   { name: "grapes", price: 750 },
+// ];
 
-function updateArray(arr) {
-    let newArr = [];
-    let id = 0;
-    for (const el of arr) {
-        let newel = { ...el, price: el.price * 0.8, id: id};
-        id += 1;
-        newArr.push(newel);
-    }
-    return newArr;
-} 
-console.log(updateArray(fruits));
-console.log(fruits);
+// function updateArray(arr) {
+//     let newArr = [];
+//     let id = 0;
+//     for (const el of arr) {
+//         let newel = { ...el, price: el.price * 0.8, id: id};
+//         id += 1;
+//         newArr.push(newel);
+//     }
+//     return newArr;
+// }
+// console.log(updateArray(fruits));
+// console.log(fruits);
+
+
+
+// напиши код який із массиву arr видаляє елемент foo.
+// розвертає цей массив
+// і повертає рядок js is the best
+// вхідний массив не має змінюватись (мутується)
+const arr = ["best", "the", "foo", "is", "js"];
+const copyArr = [...arr]
+const index = copyArr.indexOf("foo");
+copyArr.splice(index, 1);
+copyArr.reverse();
+const string = copyArr.join(" ")
+console.log(string);
+console.log(arr);
+
+const string = arr
+  .slice(0, arr.indexOf("foo"))
+  .concat(arr.slice(arr.indexOf("foo") + 1, arr.length))
+  .reverse()
+  .join(" ");
