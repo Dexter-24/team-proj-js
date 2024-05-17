@@ -203,16 +203,43 @@ const someObj = {
 //   return sum 
 // }
 
-console.log(sumSallary(someObj));
+// console.log(sumSallary(someObj));
 
 
-function sumSallary(object) { 
-  let sum = 0;
-  let sallary = Object.values(object)
-  for (let value of sallary) {
-    sum += value
+// function sumSallary(object) { 
+//   let sum = 0;
+//   let sallary = Object.values(object)
+//   for (let value of sallary) {
+//     sum += value
+//   }
+//   return sum; 
+// }
+
+// console.log(sumSallary(someObj));
+
+/*Напишіть функцію checkBrackets(str) яка приймає рядок жс коду (someFn)
+  і перевіряє правильність закриття дужок () {} []
+  Якщо рядок містить коректний код функція повертає true.
+  В іншому випадку повертає false
+*/
+// const someFn = `function foo() {
+//   const arr = [1, 2, 3];
+//   console.log(arr);
+// }`;
+
+
+// Напиши функцію, яка приймає два масиви і повертає массив спільних значень
+const firstArray = [1, 2, 3, 7, 5];
+const secondArray = [3, 5, 4, 2, 9];
+
+function commonNumbers(arr1, arr2) {
+  const commonArr = [];
+  for (const number of arr1) {
+    if (arr2.includes(number)) {
+      commonArr.push(number);
+    }
   }
-  return sum; 
+  return commonArr;
 }
-
-console.log(sumSallary(someObj));
+const result = commonNumbers(firstArray, secondArray);
+console.log(result);
