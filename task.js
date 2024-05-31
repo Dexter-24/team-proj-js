@@ -107,9 +107,7 @@ if (login === "Admin") {
 //   console.log(  `${key} : ${user[key]}` )
 // }
 
-
 // console.log( )
-
 
 // /**
 //  *? Напишіть ф-цію calcTotalPrice(someStones, stoneName),
@@ -125,7 +123,6 @@ if (login === "Admin") {
 //   { name: "Щебень", price: 150, quantity: 100 },
 // ];
 
-
 // function calcTotalPrice(someStones, stoneName) {
 
 //   for (let stone of someStones) {
@@ -138,7 +135,6 @@ if (login === "Admin") {
 // }
 
 // console.log(calcTotalPrice(stones, ""));
-
 
 /*
 ///**
@@ -165,8 +161,6 @@ if (login === "Admin") {
 // console.log(updateArray(fruits));
 // console.log(fruits);
 
-
-
 // напиши код який із массиву arr видаляє елемент foo.
 // розвертає цей массив
 // і повертає рядок js is the best
@@ -186,33 +180,31 @@ if (login === "Admin") {
 //   .reverse()
 //   .join(" ");
 
-
-  /* Напишіть функцію, яка приймає об'єкт і рахує загальну суму зарплат працівників. */
+/* Напишіть функцію, яка приймає об'єкт і рахує загальну суму зарплат працівників. */
 const someObj = {
   worker1: 360,
   worker2: 750,
   worker3: 240,
 };
 
-// function sumSallary(object) { 
+// function sumSallary(object) {
 //   let sum = 0;
-//   for (let value in object) { 
+//   for (let value in object) {
 //     sum += object[value]
 //     // console.log(object[value]);
 //   }
-//   return sum 
+//   return sum
 // }
 
 // console.log(sumSallary(someObj));
 
-
-// function sumSallary(object) { 
+// function sumSallary(object) {
 //   let sum = 0;
 //   let sallary = Object.values(object)
 //   for (let value of sallary) {
 //     sum += value
 //   }
-//   return sum; 
+//   return sum;
 // }
 
 // console.log(sumSallary(someObj));
@@ -226,7 +218,6 @@ const someObj = {
 //   const arr = [1, 2, 3];
 //   console.log(arr);
 // }`;
-
 
 // Напиши функцію, яка приймає два масиви і повертає массив спільних значень
 // const firstArray = [1, 2, 3, 7, 5];
@@ -249,17 +240,42 @@ const someObj = {
 // *? Зробіть знижку 20 % на всі фрукти у масиві
 // *? Надайте ід для кожного продукту
 // */
-const fruits = [
-  { name: "apple", price: 200 },
-  { name: "orange", price: 300 },
-  { name: "grapes", price: 750 },
-];
+// const fruits = [
+//   { name: "apple", price: 200 },
+//   { name: "orange", price: 300 },
+//   { name: "grapes", price: 750 },
+// ];
 
-const newfruits = (array) => array.map((fruit, idx) => {
-  return {...fruit, price: fruit.price * 0.8, id: idx + 1}
+// const newfruits = (array) => array.map((fruit, idx) => {
+//   return {...fruit, price: fruit.price * 0.8, id: idx + 1}
+// }
+// );
+// console.log(newfruits(fruits));
+
+//TODO:=============================================
+// Створити клас Worker, у якого є властивості name, age, salary.
+//У класу Worker є метод getSalary.
+//Створити клас TopLevelWorker, у якого є властивість hierarchyLevel
+//і який успадковує клас Worker, додаючи метод getHierarchyLevel
+
+class Worker {
+  constructor(name, age, salary) {
+    this.name = name;
+    this.age = age;
+    this.salary = salary;
+  }
+  getSalary() {
+    return this.salary;
+  }
 }
-);
-console.log(newfruits(fruits));
-
-
-
+class TopLevelWorker extends Worker {
+  constructor(name, age, salary, hierarchyLevel) {
+    super(name, age, salary);
+    this.hierarchyLevel = hierarchyLevel;
+  }
+  getHierarchyLevel() {
+    return this.hierarchyLevel;
+  }
+}
+const newWorker = new TopLevelWorker("Anna", 20, 2000, "top");
+console.log(newWorker);
