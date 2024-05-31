@@ -229,17 +229,37 @@ const someObj = {
 
 
 // Напиши функцію, яка приймає два масиви і повертає массив спільних значень
-const firstArray = [1, 2, 3, 7, 5];
-const secondArray = [3, 5, 4, 2, 9];
+// const firstArray = [1, 2, 3, 7, 5];
+// const secondArray = [3, 5, 4, 2, 9];
 
-function commonNumbers(arr1, arr2) {
-  const commonArr = [];
-  for (const number of arr1) {
-    if (arr2.includes(number)) {
-      commonArr.push(number);
-    }
-  }
-  return commonArr;
+// function commonNumbers(arr1, arr2) {
+//   const commonArr = [];
+//   for (const number of arr1) {
+//     if (arr2.includes(number)) {
+//       commonArr.push(number);
+//     }
+//   }
+//   return commonArr;
+// }
+// const result = commonNumbers(firstArray, secondArray);
+// console.log(result);
+
+///**
+// *? Напишіть функцію, яка приймає массив об'єктів і повертає новий массив
+// *? Зробіть знижку 20 % на всі фрукти у масиві
+// *? Надайте ід для кожного продукту
+// */
+const fruits = [
+  { name: "apple", price: 200 },
+  { name: "orange", price: 300 },
+  { name: "grapes", price: 750 },
+];
+
+const newfruits = (array) => array.map((fruit, idx) => {
+  return {...fruit, price: fruit.price * 0.8, id: idx + 1}
 }
-const result = commonNumbers(firstArray, secondArray);
-console.log(result);
+);
+console.log(newfruits(fruits));
+
+
+
