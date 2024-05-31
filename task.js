@@ -258,24 +258,62 @@ const someObj = {
 //Створити клас TopLevelWorker, у якого є властивість hierarchyLevel
 //і який успадковує клас Worker, додаючи метод getHierarchyLevel
 
-class Worker {
-  constructor(name, age, salary) {
-    this.name = name;
-    this.age = age;
-    this.salary = salary;
+// class Worker {
+//   constructor(name, age, salary) {
+//     this.name = name;
+//     this.age = age;
+//     this.salary = salary;
+//   }
+//   getSalary() {
+//     return this.salary;
+//   }
+// }
+// class TopLevelWorker extends Worker {
+//   constructor(name, age, salary, hierarchyLevel) {
+//     super(name, age, salary);
+//     this.hierarchyLevel = hierarchyLevel;
+//   }
+//   getHierarchyLevel() {
+//     return this.hierarchyLevel;
+//   }
+// }
+// const newWorker = new TopLevelWorker("Anna", 20, 2000, "top");
+// console.log(newWorker);
+
+//TODO:=============================================
+/**
+ *? Напиши клас Client який створює об'єкт
+ *? з ​​властивостями login email
+ *? Оголоси приватні властивості #login #email,
+ *? доступ до яких зроби через геттер та сеттер login email
+ */
+
+class Client {
+  #login
+  #email
+  constructor(login, email) {
+    this.#login = login
+    this.#email = email
   }
-  getSalary() {
-    return this.salary;
+
+  get login() {
+    return this.#login
+  }
+
+  set login(newLogin) {
+    this.#login = newLogin
+  }
+
+  get email() {
+    return this.#email
+  }
+
+  set email(newEmail) {
+    this.#email = newEmail
   }
 }
-class TopLevelWorker extends Worker {
-  constructor(name, age, salary, hierarchyLevel) {
-    super(name, age, salary);
-    this.hierarchyLevel = hierarchyLevel;
-  }
-  getHierarchyLevel() {
-    return this.hierarchyLevel;
-  }
-}
-const newWorker = new TopLevelWorker("Anna", 20, 2000, "top");
-console.log(newWorker);
+ 
+const newClient = new Client("Nad", "hfg@gmail.com")
+console.log(newClient)
+newClient.login = "hhjhk"
+console.log(newClient.login)
