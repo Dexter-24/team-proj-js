@@ -288,32 +288,64 @@ const someObj = {
  *? доступ до яких зроби через геттер та сеттер login email
  */
 
-class Client {
-  #login
-  #email
-  constructor(login, email) {
-    this.#login = login
-    this.#email = email
+// class Client {
+//   #login
+//   #email
+//   constructor(login, email) {
+//     this.#login = login
+//     this.#email = email
+//   }
+
+//   get login() {
+//     return this.#login
+//   }
+
+//   set login(newLogin) {
+//     this.#login = newLogin
+//   }
+
+//   get email() {
+//     return this.#email
+//   }
+
+//   set email(newEmail) {
+//     this.#email = newEmail
+//   }
+// }
+
+// const newClient = new Client("Nad", "hfg@gmail.com")
+// console.log(newClient)
+// newClient.login = "hhjhk"
+// console.log(newClient.login)
+/**
+ *? Напиши класс Storage який створює об'єкти
+ *? Для управління складом товарів.
+ *? При виклику отримуватиме один агрумент - початковий масив товарів,
+ *? і записувати їх у властивість items.
+ *? Додай методи класу:
+ *? getItems() - повертайте масив товарів
+ *? addItems(item) - отримує новий товар та додає його до поточних
+ *? removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних
+ */
+
+class Storage {
+  constructor(initialItems = []) {
+    this.items = initialItems;
+  }
+  getItems() {
+    return this.items;
   }
 
-  get login() {
-    return this.#login
+  addItem(item) {
+    this.items.push(item);
   }
 
-  set login(newLogin) {
-    this.#login = newLogin
-  }
-
-  get email() {
-    return this.#email
-  }
-
-  set email(newEmail) {
-    this.#email = newEmail
+  removeItem(item) {
+    this.items = this.items.filter((lm) => item !== lm);
   }
 }
- 
-const newClient = new Client("Nad", "hfg@gmail.com")
-console.log(newClient)
-newClient.login = "hhjhk"
-console.log(newClient.login)
+const storage = new Storage(["item1", "item2", "item3"]);
+console.log(storage);
+storage.addItem("item4");
+storage.removeItem("item1");
+console.log(storage.getItems());
