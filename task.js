@@ -328,24 +328,48 @@ const someObj = {
  *? removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних
  */
 
-class Storage {
-  constructor(initialItems = []) {
-    this.items = initialItems;
-  }
-  getItems() {
-    return this.items;
-  }
+// class Storage {
+//   constructor(initialItems = []) {
+//     this.items = initialItems;
+//   }
+//   getItems() {
+//     return this.items;
+//   }
 
-  addItem(item) {
-    this.items.push(item);
-  }
+//   addItem(item) {
+//     this.items.push(item);
+//   }
 
-  removeItem(item) {
-    this.items = this.items.filter((lm) => item !== lm);
-  }
-}
-const storage = new Storage(["item1", "item2", "item3"]);
-console.log(storage);
-storage.addItem("item4");
-storage.removeItem("item1");
-console.log(storage.getItems());
+//   removeItem(item) {
+//     this.items = this.items.filter((lm) => item !== lm);
+//   }
+// }
+// const storage = new Storage(["item1", "item2", "item3"]);
+// console.log(storage);
+// storage.addItem("item4");
+// storage.removeItem("item1");
+// console.log(storage.getItems());
+
+//TODO:==============================================
+/**
+ *? Поверніть об'єкт, в якому вказано кількість тегів.
+ *? Очікуваний результат {js: 3, nodejs: 3, html: 2, css: 2, react: 2}
+ */
+const tweets = [
+  { id: "000", likes: 5, tags: ["js", "nodejs"] },
+  { id: "001", likes: 2, tags: ["html", "css"] },
+  { id: "002", likes: 17, tags: ["html", "js", "nodejs"] },
+  { id: "003", likes: 8, tags: ["css", "react"] },
+  { id: "004", likes: 0, tags: ["js", "nodejs", "react"] },
+];
+const result = tweets
+  .flatMap((tweet) => tweet.tags)
+  // .reduce((acc, tag) => {
+  //   console.log(acc);
+  //   return { ...acc, [tag]: acc[tag] ? acc[tag] + 1 : 1 };
+  // }, {});
+  .reduce((acc, tag) => {
+    acc[tag] = (acc[tag] || 0) + 1;
+    return acc;
+  }, {});
+console.log(result);
