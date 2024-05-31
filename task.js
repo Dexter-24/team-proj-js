@@ -219,6 +219,29 @@ const someObj = {
 //   console.log(arr);
 // }`;
 
+// function checkBrackets(str) {
+//   const stack = [];
+//   const obj = {
+//     "(": ")",
+//     "{": "}",
+//     "[": "]",
+//   };
+//   for (let i = 0; i < str.length; i++) {
+//     const bracket = str[i];
+//     if (bracket === "(" || bracket === "{" || bracket === "[") {
+//       stack.push(bracket);
+//     }
+//     if (bracket === "}" || bracket === ")" || bracket === "]") {
+//       const lastEl = stack.pop();
+//       if (bracket !== obj[lastEl]) {
+//         return false;
+//       }
+//     }
+//   }
+//   if (stack.length) return false;
+//   return true;
+// }
+
 // Напиши функцію, яка приймає два масиви і повертає массив спільних значень
 // const firstArray = [1, 2, 3, 7, 5];
 // const secondArray = [3, 5, 4, 2, 9];
