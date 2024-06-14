@@ -372,3 +372,4 @@ console.log(storage);
 storage.addItem("item4");
 storage.removeItem("item1");
 console.log(storage.getItems());
+ 
