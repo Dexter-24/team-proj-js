@@ -5,10 +5,10 @@
 */
 
 const inputRef = document.querySelector("#alertInput");
-const btnRef = document.querySelector('#alertButton');
-btnRef.addEventListener('click', handlerClick);
+const btnRef = document.querySelector("#alertButton");
+btnRef.addEventListener("click", handlerClick);
 function handlerClick() {
-    alert(inputRef.value);
+  alert(inputRef.value);
 }
 
 //TODO:==============================================
@@ -18,25 +18,35 @@ function handlerClick() {
 Ви можете натиснути на неї кілька разів або вручну змінити вміст інпутів.
 */
 
-const leftSwapInputRef = document.querySelector("#leftSwapInput")
+const leftSwapInputRef = document.querySelector("#leftSwapInput");
 const rightSwapInputRef = document.querySelector("#rightSwapInput");
 const swapButtonRef = document.querySelector("#swapButton");
 
-swapButtonRef.addEventListener("click", () => { 
-    const leftInputValue = leftSwapInputRef.value;
-    const rightSwapInputValue = rightSwapInputRef.value; 
-    rightSwapInputRef.value = leftInputValue; 
-    leftSwapInputRef.value = rightSwapInputValue;
-})
-
+swapButtonRef.addEventListener("click", () => {
+  const leftInputValue = leftSwapInputRef.value;
+  const rightSwapInputValue = rightSwapInputRef.value;
+  rightSwapInputRef.value = leftInputValue;
+  leftSwapInputRef.value = rightSwapInputValue;
+});
 
 //TODO:==============================================
 /*
 Завдання 3
-Кнопка "Приховати" ховає текст і замінює назву кнопки на
-"Розкрити", при повторному натисканні текст знову стає доступним
+Кнопка "Close" ховає текст і замінює назву кнопки на
+"Open", при повторному натисканні текст знову стає доступним
 і кнопка набуває початкового вигляду.
 */
+const passwordInputRef = document.querySelector("#passwordInput");
+const passwordButtonRef = document.querySelector("#passwordButton");
+passwordButtonRef.addEventListener("click", () => {
+  if (passwordButtonRef.textContent === "Open") {
+    passwordInputRef.setAttribute("type", "text");
+    passwordButtonRef.textContent = "Close";
+    return;
+  }
+  passwordInputRef.setAttribute("type", "password");
+  passwordButtonRef.textContent = "Open";
+});
 
 //TODO:==============================================
 /*
