@@ -84,6 +84,13 @@ window.addEventListener('click', (event) => {
 Натиснувши кнопку "Подвоювати", збільшити значення
 у кожному елементі списку у 2 рази
 */
+const liReF = document.querySelectorAll(".listItem");
+const btnDoubleRef = document.querySelector("#double");
+
+btnDoubleRef.addEventListener("click", () => { 
+    liReF.forEach((li)=> li.textContent = BigInt(li.textContent) ** 2n)
+})
+
 
 //TODO:==============================================
 /*
