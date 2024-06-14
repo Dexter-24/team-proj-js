@@ -73,7 +73,11 @@ increaseBtnRef.addEventListener("click", () => {
 Завдання 5
 Додайте слухач кліку на window і визначте чи клікнув користувач у дів з id="place".
 */
-
+const placeRef = document.getElementById('place');
+window.addEventListener('click', (event) => {
+    event.target === placeRef ? console.log(true) : console.log(false);
+    }
+)
 //TODO:==============================================
 /*
 Завдання 6
